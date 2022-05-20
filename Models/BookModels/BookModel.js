@@ -3,10 +3,10 @@ const dbFun = require('../../MySqlConfig/DatabaseFunction');
 
 
 
-exports.createNewBook = (book_title,price, date_created) => {
+exports.createNewBook = (book_title,price,seller_id, date_created) => {
     return new Promise((resolve, reject) => {
-        queryString = `INSERT INTO books(book_title,price,created_date) values(?,?,?)`;
-        db.query(queryString, [book_title,price, date_created], (error, result) => {
+        queryString = `INSERT INTO books(book_title,price,seller_id,created_date) values(?,?,?,?)`;
+        db.query(queryString, [book_title,price,seller_id, date_created], (error, result) => {
             if (error) {
                 dbFun.connectionRelease;
                 reject(error);

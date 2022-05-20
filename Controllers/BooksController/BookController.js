@@ -18,14 +18,14 @@ exports.createNewBook = async (req,res) =>{
         const data = req.body;
         const title = data.book_title;
         const price = data.price;
+        const seller_id = data.seller_id;
         const date_created = moment.utc().format('YYYY-MM-DD');
         if(title && price !='')
         {
 
-            const registerBook  = await BookModel.createNewBook(title,price,date_created);
+            const registerBook  = await BookModel.createNewBook(title,price,seller_id,date_created);
             const book_id = (registerBook.insertId);
             const registerDetails = await BookModel.getRegisterBookDetails(book_id);
-            console.log(book_id);
             helper.successResponse(res,'Book Registered Successfully!',registerDetails);       
         }
         else

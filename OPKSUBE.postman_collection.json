@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "259f80de-91f2-4919-8255-c780852a7e75",
+		"_postman_id": "23a4830e-ebc7-4106-a5eb-02cc1867a8af",
 		"name": "OPKSUBE",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -44,11 +44,11 @@
 		{
 			"name": "update-book-details",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"book_id\": 1,\r\n    \"book_title\": \"florence\",\r\n    \"price\":120005\r\n}",
+					"raw": "{\r\n    \"book_id\": 1,\r\n    \"book_title\": \"florence1\",\r\n    \"price\":120005\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -62,7 +62,7 @@
 		{
 			"name": "delete-book",
 			"request": {
-				"method": "POST",
+				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -74,6 +74,183 @@
 					}
 				},
 				"url": "localhost:4000/v1/delete-book"
+			},
+			"response": []
+		},
+		{
+			"name": "create-new-seller",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"seller\":\"ABC Book Depot\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/v1/create-new-seller"
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-sellers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:4000/v1/get-all-seller"
+			},
+			"response": []
+		},
+		{
+			"name": "update-seller-details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"seller\":\"ABC Book Depot updated\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/v1/update-seller-details"
+			},
+			"response": []
+		},
+		{
+			"name": "delete-seller",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"seller_id\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/v1/delete-seller"
+			},
+			"response": []
+		},
+		{
+			"name": "create-new-customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerName\":\"shashank saini\",\n    \"gender\": \"M\",\n    \"countryCode\":\"+91\",\n    \"phoneNumber\":6395634605\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/v1/create-new-customer"
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:4000/v1/get-all-customers"
+			},
+			"response": []
+		},
+		{
+			"name": "update-customer-details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "localhost:4000/v1/update-customer-details"
+			},
+			"response": []
+		},
+		{
+			"name": "delete-customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer_id\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/v1/delete-customer"
+			},
+			"response": []
+		},
+		{
+			"name": "purchase-book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\":2,\n    \"bookId\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/v1/purchase-book"
+			},
+			"response": []
+		},
+		{
+			"name": "book-purchase-by-customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer_id\":\"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/v1/book-purchase-by-customer"
+			},
+			"response": []
+		},
+		{
+			"name": "book-sold-by-seller",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"seller_id\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/v1/book-sold-by-seller"
 			},
 			"response": []
 		}
